@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>幸运宝箱</title>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript">
+	var iScale = 1 / window.devicePixelRatio;
+	document.write('<meta name="viewport" content="width=device-width,initial-scale='+iScale+',minimum-scale='+iScale+',maximum-scale='+iScale+',user-scalable=no"/>');
+	var iWidth = document.documentElement.clientWidth;
+	document.getElementsByTagName('html')[0].style.fontSize = iWidth / 16+ 'px';
+   </script>
+ </head>
+ <style type="text/css">
+ 
+.page-index {
+	background: url(img/bigback.png) center no-repeat;
+	background-size: 155%;
+}
+.target {
+	background:#ff00d4;
+	opacity: .4;
+	width: 11.11%;
+	height: 2rem;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+table {
+	margin: -0.3rem auto 0;
+	width: 100%;
+}
+table tr td {
+	width: 11.111%;
+	height: 2rem;
+}	
+ 	
+ </style>
+ <body class="page-index">
+  <!--游戏区域开始-->
+  <table cellspacing="1" cellpadding="0" border="0">
+   <tbody>
+    <tr>
+     <td id="0" style="background: rgba(0, 0, 0, 0) url('img/zuan.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="1" style="background: rgba(0, 0, 0, 0) url('img/yuan.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="2" style="background: rgba(0, 0, 0, 0) url('img/che.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="3" style="background: rgba(0, 0, 0, 0) url('img/fang.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="4" style="background: rgba(0, 0, 0, 0) url('img/cai.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="5" style="background: rgba(0, 0, 0, 0) url('img/pijiu.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="6" style="background: rgba(0, 0, 0, 0) url('img/caishen.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="7" style="background: rgba(0, 0, 0, 0) url('img/xianshui.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="8" style="background: rgba(0, 0, 0, 0) url('img/jiu.png') repeat scroll 50% 0% / cover ;"></td>
+    </tr>
+    <tr>
+     <td id="25" style="background: rgba(0, 0, 0, 0) url('img/jiu.png') repeat scroll 0% 0% / cover ;"></td>
+     <td colspan="7" rowspan="4" style=" text-align: center; position: relative;">
+       		 
+      <!--<div class="button czBtn" onclick="init()">重置</div>--> </td>
+     <td id="9" style="background: rgba(0, 0, 0, 0) url('img/zuan.png') repeat scroll 50% 0% / cover ;"></td>
+    </tr>
+    <tr>
+     <td id="24" style="background: rgba(0, 0, 0, 0) url('img/xianshui.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="10" style="background: rgba(0, 0, 0, 0) url('img/yuan.png') repeat scroll 50% 0% / cover ;"></td>
+    </tr>
+    <tr>
+     <td id="23" style="background: rgba(0, 0, 0, 0) url('img/caishen.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="11" style="background: rgba(0, 0, 0, 0) url('img/che.png') repeat scroll 50% 0% / cover ;"></td>
+    </tr>
+    <tr>
+     <td id="22" style="background: rgba(0, 0, 0, 0) url('img/pijiu.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="12" style="background: rgba(0, 0, 0, 0) url('img/fang.png') repeat scroll 50% 0% / cover ;"></td>
+    </tr>
+    <tr>
+     <td id="21" style="background: rgba(0, 0, 0, 0) url('img/fang.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="20" style="background: rgba(0, 0, 0, 0) url('img/che.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="19" style="background: rgba(0, 0, 0, 0) url('img/yuan.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="18" style="background: rgba(0, 0, 0, 0) url('img/zuan.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="17" style="background: rgba(0, 0, 0, 0) url('img/pao1.jpg') repeat scroll 50% 0% / cover ;"></td>
+     <td id="16" style="background: rgba(0, 0, 0, 0) url('img/jiu.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="15" style="background: rgba(0, 0, 0, 0) url('img/xianshui.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="14" style="background: rgba(0, 0, 0, 0) url('img/caishen.png') repeat scroll 50% 0% / cover ;"></td>
+     <td id="13" style="background: rgba(0, 0, 0, 0) url('img/pijiu.png') repeat scroll 50% 0% / cover ;"></td>
+    </tr>
+   </tbody>
+  </table>
+  <!--游戏区域结束-->
+  <!--目标游戏开始-->
+  <div class="target" style="top: 29px; left: 284.5px;"></div>
+  <!--目标游戏结束-->
+     <div class="button staBtn" onclick="startRun()"> <img style="width: 100%;" src="img/star.png"/> </div>
+
+  <script type="text/javascript">
+	var n=0;
+	init();
+	function init(){
+		moveToNext(0);
+	}
+	function moveToNext(i){
+		var $target = $('div.target');//代表找到div.target的元素
+		var offset = $('#'+(i%26)).offset();
+		$target.animate({top:offset.top-2,left:offset.left-2},50);
+		n = i;
+	}
+	function startRun(){
+			var randomNumber = Math.random(10)*26;//随机生成0-26之间的数字
+			//通过概率得到选中的div的id
+			if(randomNumber <= 7.8){
+				var id = [5,13,22];//2倍
+			}else if(7.8 < randomNumber <= 10.8){
+				var id = [6,23,14];//5倍
+			}else if(10.8 < randomNumber <= 17.8){
+				var id = [7,24,15];//7倍
+			}else if(17.8 < randomNumber <= 19.8){
+				var id = [26,12,20];//9倍
+			}else if(19.8 < randomNumber <= 12.8){
+				var id = [25,8,16];//12倍
+			}else if(12.8 < randomNumber <= 18.8){
+			var id = [0,9,18];//18倍
+			}else if(18.8 < randomNumber <= 30.8){
+				var id = [2,11,20];//30倍
+			}else if(30.8 < randomNumber <= 50.8){
+				var id = [3,12,21];//50倍
+			}else if(50.8 < randomNumber <= 0.8){
+				var id = [17,4];//超级大奖
+			}
+			var aa = id[Math.floor((Math.random()*id.length))];
+			var idnumber = (aa-1);
+			randomNumber = aa + 78;//+上一个78的基数
+			var m = n;
+			for(var i=m;i<randomNumber+m;i++){
+				moveToNext(i);
+			}
+			alert(idnumber);
+	}
+</script>
+ </body>
+</html>
